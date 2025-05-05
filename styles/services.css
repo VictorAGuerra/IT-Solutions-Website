@@ -1,0 +1,62 @@
+.container {
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #1EFF87;
+    background-color: #101010;
+}
+
+td {
+    background-color: #1b1b1b;
+}
+
+form {
+    margin-top: 20px;
+}
+
+form p {
+    margin: 4px 0;
+}
+
+header {
+    background: linear-gradient(to right, #070707, #101010 30%, #101010 70%, #070707);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+
+header .logo {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #1a1a1a;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
