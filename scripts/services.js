@@ -1,4 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+    const usuarioLogadoRaw = localStorage.getItem("usuarioLogado");
+
+    if (!usuarioLogadoRaw) {
+        alert("Você precisa estar logado para acessar esta página.");
+        window.location.href = "login.html";
+    }
     const servicoSelect = document.getElementById('servico');
     const precoSpan = document.getElementById('preco');
     const prazoSpan = document.getElementById('prazo');
@@ -12,7 +19,9 @@ document.addEventListener('DOMContentLoaded', function () {
         "formatação": { preco: 120.00, prazo: 2 },
         "instalacao": { preco: 80.00, prazo: 3 },
         "backup": { preco: 100.00, prazo: 1 },
-        "rede": { preco: 150.00, prazo: 4 }
+        "rede": { preco: 150.00, prazo: 4 },
+        "consultoria": { preco: 250.00, prazo: 3 },
+        "desenvolvimento": { preco: 300.00, prazo: 2 }
     };
 
     const usuario = JSON.parse(localStorage.getItem('usuarioLogado'));
@@ -44,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const config = servicosConfig[valorSelecionado];
         const dataPedido = new Date().toISOString().split('T')[0];
-        const numero = String(Date.now()); 
+        const numero = String(Date.now());
         const dataPrevista = dataPrevistaSpan.textContent;
 
         const novaSolicitacao = {
@@ -76,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <td>${servico.dataPrevista}</td>
             <td><button class="remover">Remover</button></td>
         `;
-        
+
         const btnRemover = novaLinha.querySelector('.remover');
         btnRemover.addEventListener('click', function () {
             removerLinha(servico.id, novaLinha);
